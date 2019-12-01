@@ -1,0 +1,35 @@
+{
+  "name": "sample-bookmarklet-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint ./src/**/*.ts",
+    "build": "rm -rf ./dist && npx parcel build src/index.ts --no-source-maps",
+    "build:bookmarklet": "sed -e '1s/^/javascript:/' ./dist/index.js | tr -d '\n' > dist/index.bookmarklet.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akihisa1210/sample-bookmarklet-typescript.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akihisa1210/sample-bookmarklet-typescript/issues"
+  },
+  "homepage": "https://github.com/akihisa1210/sample-bookmarklet-typescript#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.9.0",
+    "@typescript-eslint/parser": "^2.9.0",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "parcel": "^1.12.4",
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "unfetch": "^4.1.0"
+  }
+}
